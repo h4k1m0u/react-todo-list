@@ -1,7 +1,13 @@
 The [official docs](https://reactjs.org/docs/hello-world.html) is perfect to get started with `ReactJS`.
 
 
-# Create a React App
+# Cloning this repo
+
+1. **Clone with git:** `git clone https://github.com/h4k1m0u/react-todo-list.git`
+2. **Install dependencies in package.json:** `npm install`
+
+
+# Create a React App from scratch
 
 1. **Install NodeJS:** Download [Nodejs for Windows](https://nodejs.org/en/).
 2. **Install create-react-app:** `npm install -g create-react-app`

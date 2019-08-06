@@ -1,8 +1,8 @@
 // Simple todo list
 // https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b
 import React from 'react';
+import axios from 'axios';
 import styles from './App.module.css';
-// import Task from './Task.js';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -18,6 +18,15 @@ export default class App extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    componentDidMount() {
+        // get todos remotely
+        axios.get('https://jsonplaceholder.typicode.com/todos').then(res => {
+            const data = res.data;
+            const todos = data.map(item => item.title);
+            this.setState({items: todos.slice(0, 10)});
+        });
+    }
+
     onChange(e) {
         // save entered value
         this.setState({item: e.target.value});
@@ -28,7 +37,7 @@ export default class App extends React.Component {
 
         // append entered value & clear input
         if (this.state.item)
-            this.setState({items: [...this.state.items, this.state.item], item: ''}, () => {  
+            this.setState({items: [this.state.item, ...this.state.items], item: ''}, () => {  
                 console.log('Callback');
                 console.log(this.state.items);
             });
