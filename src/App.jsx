@@ -2,21 +2,31 @@
 // https://medium.com/@aghh1504/1-simple-react-todo-list-52186b62976b
 import React from 'react';
 import axios from 'axios';
-import styles from './App.module.css';
-// import Button from '@material-ui/core/Button';
+import {
+  List,
+  CssBaseline,
+} from '@material-ui/core';
+import Header from './components/Header';
+import Todo from './components/Todo';
+import DialogAdd from './components/DialogAdd';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
+    // init state variables
     this.state = {
       item: '',
       items: [],
+      open: false,
     };
 
     // binding necessary to make 'this' work in callback
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onDelete = this.onDelete.bind(this);
+    this.onAdd = this.onAdd.bind(this);
+    this.onClose = this.onClose.bind(this);
   }
 
   componentDidMount() {
@@ -62,6 +72,9 @@ class App extends React.Component {
         item: '',
       });
     }
+
+    // close dialog
+    this.onClose();
   }
 
   onDelete(key) {
@@ -76,30 +89,43 @@ class App extends React.Component {
     });
   }
 
+  onAdd() {
+    // show dialog
+    this.setState({
+      open: true,
+    });
+  }
+
+  onClose() {
+    // close dialog
+    this.setState({
+      open: false,
+    });
+  }
+
   render() {
-    const { items, item } = this.state;
+    const { items, open } = this.state;
 
     return (
-      <div>
-        <h1>Todo List</h1>
+      <>
+        <CssBaseline />
+        <Header appName="Todo-list" onAdd={this.onAdd} />
 
-        <form onSubmit={this.onSubmit}>
-          <input type="text" onChange={this.onChange} value={item} />
-          <button type="submit" className={styles.button}>Submit</button>
-        </form>
-
-        <ul>
+        <List component="nav">
           {
             items.map((todo) => (
-              <li key={todo.key}>
-                <button type="button" onClick={() => this.onDelete(todo.key)}>
-                  {todo.value}
-                </button>
-              </li>
+              <Todo key={todo.key} todo={todo} onDelete={this.onDelete} />
             ))
           }
-        </ul>
-      </div>
+        </List>
+
+        <DialogAdd
+          open={open}
+          onClose={this.onClose}
+          onChange={this.onChange}
+          onSubmit={this.onSubmit}
+        />
+      </>
     );
   }
 }

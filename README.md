@@ -10,13 +10,13 @@ The [official docs](https://reactjs.org/docs/hello-world.html) is perfect to get
 # Create a React App from scratch
 
 1. **Install NodeJS:** Download [Nodejs for Windows](https://nodejs.org/en/).
-2. **Install create-react-app:** `npm install -g create-react-app`
+2. **Install create-react-app:** `npm install create-react-app`
 3. **Initialize a React App:** `create-react-app my-app`
 4. **Run app:** `npm start`
 
 
-# Editor
-[Visual Studio Code](https://code.visualstudio.com/)
+# Learn material-ui
+[Tutorial on youtube](https://www.youtube.com/watch?v=xm4LX5fJKZ8)
 
 
 # Serving react app from Github
