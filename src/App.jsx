@@ -6,9 +6,12 @@ import {
   List,
   CssBaseline,
 } from '@material-ui/core';
-import Header from './components/Header';
-import Todo from './components/Todo';
-import DialogAdd from './components/DialogAdd';
+import {
+  Header,
+  Todo,
+  DialogAdd,
+  Geo,
+} from './components';
 
 class App extends React.Component {
   constructor(props) {
@@ -124,6 +127,10 @@ class App extends React.Component {
           onClose={this.onClose}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
+        />
+
+        <Geo
+          coords={[36, 3]}
         />
       </>
     );
