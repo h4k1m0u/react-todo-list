@@ -131,6 +131,7 @@ class App extends React.Component {
 
         <Geo
           coords={[36, 3]}
+          zoom={5}
         />
       </>
     );
