@@ -19,10 +19,6 @@ The [official docs](https://reactjs.org/docs/hello-world.html) is perfect to get
 [Tutorial on youtube](https://www.youtube.com/watch?v=xm4LX5fJKZ8)
 
 
-# Assets
-[GeoJSON file](https://github.com/johan/world.geo.json) available for free.
-
-
 # Serving react app from Github
 Following [this tutorial](https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d):
 

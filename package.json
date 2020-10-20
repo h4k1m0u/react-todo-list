@@ -1,5 +1,5 @@
 {
-  "name": "react-todo-list",
+  "name": "todos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,11 +10,9 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.3",
-    "leaflet": "^1.7.1",
-    "react-leaflet": "^2.7.0"
+    "react-scripts": "^3.4.3"
   },
-  "homepage": "https://h4k1m0u.github.io/react-todo-list",
+  "homepage": "https://h4k1m0u.github.io/todos",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

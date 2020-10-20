@@ -10,7 +10,6 @@ import {
   Header,
   Todo,
   DialogAdd,
-  Geo,
 } from './components';
 
 class App extends React.Component {
@@ -127,11 +126,6 @@ class App extends React.Component {
           onClose={this.onClose}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
-        />
-
-        <Geo
-          coords={[36, 3]}
-          zoom={5}
         />
       </>
     );
